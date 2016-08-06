@@ -1,0 +1,56 @@
+.hero {
+    background: url(../bible3.jpg) no-repeat top center;
+    min-height: 30vh;
+    background-size: cover;
+    padding-top: 50px;
+    @include breakpoint(medium){
+        padding-top: 80px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 40px;
+        color: $white;
+    }
+}
+
+.hero__box {
+    width: 90%;
+    min-height: 200px;
+    background: rgba($black, .8);
+    color: $white;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    @include breakpoint (medium) {
+        width: 629px;
+        min-height: 200px;
+    }
+}
+
+.hero__box h3 {
+    padding-top: 50px;
+    font-weight: 700;
+}
+
+h3.worship {
+    background: url(http://storage.biblebaptistmattoon.org/media/heart.png) no-repeat top center;
+}
+
+h3.study {
+    background: url(http://storage.biblebaptistmattoon.org/media/bible.png) no-repeat top center;
+
+}
+
+h3.serve {
+    background: url(http://storage.biblebaptistmattoon.org/media/community.png) no-repeat top center;
+}
+
+h3.seek {
+    background: url(http://storage.biblebaptistmattoon.org/media/gift.png) no-repeat top center;
+}

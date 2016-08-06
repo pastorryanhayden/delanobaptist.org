@@ -1,0 +1,29 @@
+.serieslistContent {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.serieslistContent.otherPage {
+    background: $light-gray;
+    h2 {
+        text-align: center;
+        width: 100%;
+        font-size: 30px;
+    }
+}
+
+.otherPage {
+    background: $light-gray;
+}
+
+
+.serieslistItem {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h4 {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+}
+

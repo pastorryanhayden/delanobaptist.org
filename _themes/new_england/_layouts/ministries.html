@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="ministriesContent">
+    <div class="ministriesContent__menu" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+    <h5>Our Ministries</h5>
+        <ul class="menu vertical">
+            {% for item in site.data.ministries %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endfor %}
+        </ul>
+        </div><!--/sticky-->
+    </div><!--/ministries-menu-->
+    <div class="ministriesContent__content" id="content">
+    
+
+        <div class="ministriesContent__content__pageHeader">
+        <h1>{{page.title}}</h1>
+        </div><!--/page-header-->
+    <article class="ministriesContent__content__content">
+    <div class="ministriesContent__content__basic-info">
+        <div class="details">
+            {% if page.description %}
+            <h5>Description:</h5>
+            <p>{{page.description}}</p>
+            {% endif %}
+            {% if  page.group %}
+            <h5>Audience:</h5>
+            <p>{{page.group}}</p>
+            {% endif %}     
+        </div>
+        {% if  page.leader_name%}
+       
+        <div class="leadership">
+            <h5>Leader: {{page.leader_name}}</h5>
+            {% if page.leader_thumbnail %}
+                        {% for img in page.leader_thumbnail %}
+                    <img src="{{img.url}}" alt="" class="thumbnail" width="100px">
+                        {% endfor %}
+                    {% endif %}
+                     {% if page.leader_bio %}
+                    <p class="leaderDescription">{{page.leader_bio}}</p>
+                    {% endif %}
+            <h5>Contact:</h5>
+            {% if page.leader_phone %}
+                    <p><i class="fi-telephone"></i> <span>{{page.leader_phone}}</span></p>
+                    {% endif %}
+                    {% if page.leader_email %}
+                    <p><i class="fi-mail"></i><span> {{page.leader_email}}</span></p>
+                    {% endif %}
+        </div>
+         {% endif %}
+    </div><!--/basic-info-->
+        {% if page.body_content %}
+
+            {{page.body_content | markdownify}}
+            {% endif %}
+    <div class="ministriesContent__content__photos">
+        <h2>Photos from the {{page.title}}:</h2>
+
+        <div class="ministriesContent__content__photos__thumbnails">
+            {% for group in site.data.photos | limit: 1 %}
+            {% if group.ministry_name[0] == page.title %}
+             {% for img in group.gallery | limit: 4 %}          
+                <a class="gallery" href="{{img.url}}">
+                    <img src="{{img.thumbnails.large.url}}" width="150" height="150" />
+             </a><!--/gallery-item-->
+            {% endfor %} <!--/end individual images-->
+            {% endif %}
+          {% endfor %} <!--/ end gallery loop -->           
+        </div>
+
+    </div><!--/basic-info-->
+    </article>
+    <aside class="ministriesContent__content__sidebar">
+         {% if page.logo  %}
+         {% for img in page.logo%}
+        <img src="{{img.url}}" alt="ministry logo">
+        {% endfor %}
+        {% endif %}
+        <h3>Upcoming Ministry Events:</h3>
+    </aside>
+    </div><!--/main-content-->
+</div><!--/ministries-content-->

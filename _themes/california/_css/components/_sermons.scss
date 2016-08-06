@@ -1,0 +1,280 @@
+.sermonslistContent {
+@include grid-row();
+}
+.sermonslistContent__header {
+background: $light-gray;
+padding-top: 30px;
+padding-bottom: 30px;
+padding-left: 20px;
+.wrapper {
+    @include grid-row();
+}
+h1 {
+    font-size: 50px;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+h2 {
+    margin-top: 0;
+}
+
+}
+.sermonslistContent__MainList {
+    @include grid-column(12);
+}
+
+
+.sermonslistItem {
+    @include grid-row();
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px dotted $light-gray;
+}
+
+.sermonslistItem:last-child{
+    border-bottom: none;
+}
+
+.sermonslistItem__thumbnail {
+    margin-top:15px;
+    @include grid-column(12);
+    @include breakpoint(large) {
+        @include grid-column(4);
+    }
+}
+
+.sermonslistItem__teaser {
+@include grid-column(12);
+    @include breakpoint(large) {
+        @include grid-column(8);
+    }
+}
+.sermonslistItem__title {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+    font-size: 30px;
+    margin-bottom: 0;
+    width: inherit;
+ }
+ ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+
+ }
+ li a {
+    margin-bottom: 0;
+    margin-top: .4em;
+    display: block;
+    width: 40px;
+ }
+ li a i {
+    font-size: 30px;
+    margin-bottom: 0;
+ }
+}
+
+
+
+.sermonslistItem__tagline {
+    margin-top: 0;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $success-color;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    flex-wrap: wrap;
+}
+
+.sermonsCategoryList {
+    margin-top: 30px;
+    h3 {
+        font-size: 25px;
+        border-bottom: 1px solid $primary-color;
+        color: $primary-color;
+    }
+    ul {
+        @include menu-base;
+        @include menu-direction(vertical);
+    }
+}
+.sermonslistPlayer {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sermonslistPagination {
+    @include grid-row;
+    margin-bottom: 30px;
+    ul.pagination {
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+    }
+}
+
+// Single Sermon Page Styles
+
+.singleSermonHeader {
+    @include grid-column(10);
+    @include grid-column-offset(1);
+}
+.singleSermonHeader__mainImage {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.singleSermonHeader__teaser {
+    border-bottom: 1px solid $success-color;
+
+    .singleSermonHeader__title{
+        display: flex;
+        justify-content: space-between;
+        h3 {
+        font-size: 30px;
+        margin-bottom: 0;
+        width: inherit;
+     }
+     ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+     }
+     li a {
+        margin-bottom: 0;
+        margin-top: .4em;
+        display: block;
+        width: 40px;
+     }
+     li a i {
+        font-size: 30px;
+        margin-bottom: 0;
+     }
+
+}
+.singleSermonHeader__tagline {
+    margin-top: 0;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $success-color;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    flex-wrap: wrap;
+}
+}
+.singleSermonContent {
+@include grid-column(8);
+@include grid-column-offset(2);
+padding-top: 30px;
+padding-bottom: 30px;
+border-bottom: 1px solid $success-color;
+margin-bottom: 30px;
+
+}
+
+.sermonslistContent.singleSermonPage {
+    padding-top: 30px;
+    h2 {
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .sermonslistItem__teaser {
+    @include grid-column(10);
+    @include grid-column-offset(1);
+    }
+}
+
+// Single Series Page Styles
+
+.singleSeriesHeader {
+    @include grid-column(10);
+    @include grid-column-offset(1);
+}
+
+.singleSeriesHeader h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+    color: $secondary-color;
+}
+.singleSeriesHeader__mainImage {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.singleSeriesHeader__teaser {
+    border-bottom: 1px solid $success-color;
+
+    .singleSeriesHeader__title{
+        display: flex;
+        justify-content: space-between;
+        h3 {
+        font-size: 30px;
+        margin-bottom: 0;
+        width: inherit;
+     }
+     ul {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+     }
+     li a {
+        margin-bottom: 0;
+        margin-top: .4em;
+        display: block;
+        width: 40px;
+     }
+     li a i {
+        font-size: 30px;
+        margin-bottom: 0;
+     }
+
+}
+.singleSeriesHeader__tagline {
+    margin-top: 0;
+    font-style: italic;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $success-color;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    flex-wrap: wrap;
+}
+}
+.singleSeriesContent {
+@include grid-column(10);
+@include grid-column-offset(1);
+padding-top: 30px;
+padding-bottom: 30px;
+border-bottom: 1px solid $success-color;
+margin-bottom: 30px;
+
+}
+
+.sermonslistContent.singleSeriesPage {
+    padding-top: 30px;
+    h2 {
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .sermonslistItem__teaser {
+    @include grid-column(10);
+    @include grid-column-offset(1);
+    }
+}

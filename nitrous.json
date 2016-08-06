@@ -1,0 +1,14 @@
+{
+  "template": "ruby", 
+  "ports": [3000],
+  "name": "New England Theme",
+  "logo": "http://i.imgur.com/DD6AioH.png",
+  "scripts": {
+    "01. Start Server": "cd ~/code/master-theme && ./_test.sh",
+    "02. Backup Theme": "cd ~/code/master-theme && mkdir -p ./_themeBackups/$(date '+%d-%b-%Y') && cp *.html ./_themeBackups/$(date '+%d-%b-%Y') && rsync -av _css ./_themeBackups/$(date '+%d-%b-%Y') && rsync -av _includes ./_themeBackups/$(date '+%d-%b-%Y') && rsync -av _layouts ./_themeBackups/$(date '+%d-%b-%Y')",
+    "03. Switch to California Theme": "cd ~/code/master-theme && cp -f _themes/california/*.html ./ && rsync -av _themes/california/_css ./ && rsync -av _themes/california/_layouts ./ && rsync -av _themes/california/_includes ./",
+    "04. Switch to New England Theme": "cd ~/code/master-theme && cp -f _themes/new_england/*.html ./ && rsync -av _themes/new_england/_css ./ && rsync -av _themes/new_england/_layouts ./ && rsync -av _themes/new_england/_includes ./",
+    "05. Switch to Proclaim Theme": "cd ~/code/master-theme && cp -f _themes/proclaim/*.html ./ && rsync -av _themes/proclaim/_css ./ && rsync -av _themes/proclaim/_layouts ./ && rsync -av _themes/proclaim/_includes ./",
+    "06. Switch to Virginia Theme": "cd ~/code/master-theme && cp -f _themes/virginia/*.html ./ && rsync -av _themes/virginia/_css ./ && rsync -av _themes/virginia/_layouts ./ && rsync -av _themes/virginia/_includes ./"
+  }
+}

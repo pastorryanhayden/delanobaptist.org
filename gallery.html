@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="gallery-page">
+        <h2>Recent Photos</h2>
+        <div class="gallery-files">
+        {% for group in site.data.photos %}
+        <h3>{{group.title}}</h3>
+        <div class="gallery-group">
+            {% for img in group.gallery %}          
+        <a class="gallery thumbnail" href="{{img.url}}">
+                    <img src="{{img.thumbnails.large.url}}" width="150" height="150" />
+        </a><!--/gallery-item-->
+            {% endfor %} <!--/end individual images-->
+             </div><!--/gallery-group-->
+          {% endfor %} <!--/ end gallery loop -->  
+        </div><!--/gallery-files-->
+        </div><!--/gallery-page-->

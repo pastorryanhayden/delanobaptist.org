@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+{% if page.header_image %}
+<style>
+    {% if page.header_image%}
+    {% for img in page.header_image %}
+.ministriesPage__Title {
+background: url({{img.url}}) no-repeat;
+background-size: cover;
+}
+    {% endfor %}
+    {% else %}
+    .ministriesPage__Title {
+background: url({{site.default_header_image | prepend: site.url }}) no-repeat;
+background-size: cover;
+    }
+    {% endif %}
+
+</style>
+{% endif %}
+
+<div class="ministriesPage">
+    <div class="ministriesPage__Title">
+        <h1>{{page.title}}</h1>
+        <div class="ministriesDescription">
+            <p>{{page.description}}</p>
+        </div><!--/ministriesDescription-->
+    </div><!--/ministriesPage__Title-->
+    <div class="ministriesPage__Content">
+        <div class="ministriesPage__Content-main-content">
+            <div class="ministryInfo">
+                <div class="ministryInfo-ministry">
+                {% if page.group %}
+                    <p><i class="fi-torsos-all"></i> Group: <span>{{page.group}}</span></p>
+                {% endif %}
+                {% if page.time %}
+                    <p><i class="fi-clock"></i> Meeting Time: <span>{{page.time}}</span></p>
+                {% endif %}
+                {% if page.location %}
+                    <p><i class="fi-map"></i> Meeting Place: <span>{{page.location}}</span></p>
+                {% endif %}
+                </div><!--ministryInfo-ministry-->
+                {% if page.leader_name %}
+                <div class="ministryInfo-leader">
+                    <p><i class="fi-torso"></i> Leader: <span>{{page.leader_name}}</span></p>
+                    {% if page.leader_thumbnail %}
+                        {% for img in page.leader_thumbnail %}
+                    <img src="{{img.url}}" alt="" class="thumbnail" width="100px">
+                        {% endfor %}
+                    {% endif %}
+                    {% if page.leader_bio %}
+                    <p class="leaderDescription">{{page.leader_bio}}</p>
+                    {% endif %}
+                    {% if page.leader_phone %}
+                    <p><i class="fi-telephone"></i> <span>{{page.leader_phone}}</span></p>
+                    {% endif %}
+                    {% if page.leader_email %}
+                    <p><i class="fi-mail"></i><span> {{page.leader_email}}</span></p>
+                    {% endif %}
+                </div><!--/ministryInfo-leader-->
+                {% endif %}
+            </div><!--/ministryInfo-->
+            {% if page.body_content %}
+
+            {{page.body_content | markdownify}}
+            {% endif %}
+        </div><!--/ministriesPage__Content-main-content-->
+       
+        <div class="ministriesPage__Content-secondary-content">
+                {% if page.logo  %}
+                {% for img in page.logo%}
+                <div class="ministriesLogo">
+                    <img src="{{img.url}}" alt="ministry logo">
+                </div><!--ministriesLogo-->
+                {% endfor %}
+                {% endif %}
+                
+                
+                {% comment %}<div class="ministriesCalendar">
+                    <h3>Upcoming Ministry Events:</h3>
+                    <div data-tockify-component="mini"  data-tockify-calendar="biblebaptistchurch" data-tockify-tags="#" data-tockify-view="agenda"></div>
+                    <script data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+                     
+                </div><!--/ministriesCalendar-->
+               
+                <div class="ministriesPhotos">
+                    <h3>Recent Ministry Photos:</h3>
+                    <div class="galleryWrapper">
+                        <a href="#" class="thumbnail"><img src="#" alt="#"></a>
+                    </div> <!-- galleryWrapper -->
+
+                </div><!--/ministriesPhotos-->{% endcomment %}
+               
+        </div><!--/ministriesPage__Content-secondary-content-->
+    </div><!--/ministriesPage__Content-->
+</div><!--ministriesPage-->

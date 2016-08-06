@@ -1,0 +1,90 @@
+<div class="off-canvas-wrapper">
+<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<header>
+    <div class="infoBar">
+    <h1><a href="{{site.url}}">Immanuel <span>Baptist Church</span></a></h1>
+    <div class="service-times">
+            <ul class="menu vertical">
+                {{site.service_schedule}}
+            </ul>
+    </div><!--/service-times-->
+    <div class="contact">
+            <p>
+                {{site.header_contact}}
+                {% if  site.facebook %}<a href="{{site.facebook}}"><i class="fi-social-facebook"></i> Facebook </a>{% endif %}  {% if  site.twitter %}<a href="{{site.twitter}}"><i class="fi-social-twitter"></i> Twitter </a>{% endif %}{% if  site.youtube %}
+                <a href="{{site.youtube}}"><i class="fi-social-youtube"></i> Youtube </a>
+                {% endif %}
+            </p>
+    </div><!--/contact-->
+
+    </div><!--/infoBar-->
+<div class="MainNavigation">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
+            <li><a href="#">ABOUT US</a>
+                <ul class="menu">
+                    {% for item in site.data.abouts %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li><!--/End of About Us-->
+            <li><a href="#">MINISTRIES</a>
+                <ul class="menu">
+                    {% for item in site.data.ministries %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li><!--/ministries-->
+            <li><a href="{{ "calendar-list.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
+            <li><a href="#">MEDIA</a>
+                <ul class="menu">
+                    <li><a href="{{ "sermons.html" | prepend: site.baseurl | prepend: site.url }}">Sermons</a></li>
+                    <li><a href="{{ "blog-list.html" | prepend: site.baseurl | prepend: site.url }}">Blog</a></li>
+                    <li><a href="{{ "gallery.html" | prepend: site.baseurl | prepend: site.url }}">Gallery</a></li>
+                </ul>
+            </li><!--/media-->
+            <li><a href="{{ "contact-us.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
+        </ul><!--.dropdown menu -->
+</div><!--/MainNavigation-->
+<div class="MobileNavigation">
+    <button type="button" data-toggle="offCanvas"> <i class="fi-list"></i></button>
+</div>
+</header>
+<div class="off-canvas position-right mobile-sidebar" id="offCanvas" data-off-canvas data-position="right">
+    <ul class="vertical menu" data-accordion-menu>
+    <li><a href="{{site.url }}">HOME</a></li>
+    <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
+    <li><a href="#">ABOUT US</a>
+        <ul class="menu">
+           {% for item in site.data.abouts %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+        </ul>
+    </li><!--/End of About Us-->
+    <li><a href="#">MINISTRIES</a>
+        <ul class="menu">
+                    {% for item in site.data.ministries %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+    </li><!--/ministries-->
+    <li><a href="{{ "calendar-list.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
+    <li><a href="#">MEDIA</a>
+        <ul class="menu">
+            <li><a href="{{ "sermons.html" | prepend: site.baseurl | prepend: site.url }}">Sermons</a></li>
+            <li><a href="{{ "blog-list.html" | prepend: site.baseurl | prepend: site.url }}">Blog</a></li>
+            <li><a href="{{ "gallery.html" | prepend: site.baseurl | prepend: site.url }}">Gallery</a></li>
+        </ul>
+    </li><!--/media-->
+    <li><a href="{{ "contact-us.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
+</ul><!--.dropdown menu --></div><!--slideout menu-->
+<div class="off-canvas-content" data-off-canvas-content>
+

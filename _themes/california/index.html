@@ -1,0 +1,84 @@
+---
+layout: default
+---
+<div class="hero">
+    <div class="hero__box">
+        <h3 class="study">Rooted and built up in Him and established in the faith, as you have been taught.</h3>
+        <h4>Colossians 2:6-7</h4>
+    </div>
+    <p><i class="fi-arrow-down"></i></p>
+</div><!--/hero-->
+<div class="visitor-section">
+    <div class="wrapper">
+        <h2>We'd love to have you visit this is this Sunday.</h2>
+        <a href="{{site.url}}welcome.html" class="button visitor-button"> <i class="fi-heart"></i> Info for Visitors</a>
+    </div><!--/wrapper-->
+</div><!--/visitors-->
+<div class="currentSeries">
+    {% for item in site.data.series limit: 2 offset: 1 %}
+    <div class="currentSeries__series">
+        <a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">{%if item.featured_image%}{% for img in item.featured_image %}<img src="{{ img.url }}" alt="sermon series graphic" class="thumbnail">{% endfor %}{% else %}<img src="http://placehold.it/240x240" alt="sermon series graphic" class="thumbnail">{%endif%}</a>
+        {% if item.service %}
+    <p>{{ item.service}}</p>
+        {% endif %}
+    <h3><a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></h3>
+    <p>{{ item.description | truncate: 100 }}</p>
+    </div><!--/currentSeries__series-->
+    {% endfor %}
+    <div class="currentSeries__explanation">
+        <p>Click either of the links above to listen to recent sermons from these series.</p>
+    </div><!--/currentSeries__explanation-->
+</div><!--/currentSeries-->
+<div class="homeMinistries">
+    <h1>Featured Ministries</h1>
+    {% for item in site.data.ministries limit: 3 %}
+        {% if item.header_image %}
+            {% for img in item.header_image %}
+                <div class="ministry" style="background: url({{img.url}}) no-repeat center center">
+       	    {% endfor%}
+        {% else %}
+            <div class="ministry" style="background: url(/assets/default_header.jpg) no-repeat center center">
+        {% endif %}
+
+        <div class="ministry2">
+        <div class="ministry__wrapper">
+            <div class="ministry__wrapper2">
+        <h2><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></h2>
+        <p>{{item.description | truncate: 140 }}</p>
+        <a class="button hollow" href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">Learn More</a>
+    </div><!--/ministry__wrapper2-->
+    </div><!--/ministry-wrapper-->
+    </div><!--/ministry2-->
+    </div><!--/ministry-->
+    {% endfor %}
+</div><!--/homeMinistries-->
+<div class="homeEvents">
+    <h2>Next Church Event</h2>
+    <div class="homeEvents__explanation">
+        <p>There is always something going on at Bible Baptist.  Here is what is coming up next:</p>
+        <a href="{{site.url}}calendar-list.html" class="button"><i class="fi-info"></i>  View All Events</a>
+    </div><!--/homeEvents__explanation-->
+    {% for event in site.data.events limit: 1 %}
+    <div class="homeEvents__feature">
+        <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}">
+            {% if event.featured_image %}
+            {% for img in event.featured_image %}
+            <img src="{{ img.url }}" alt="{{ event.event_name }}" width="526" >
+            {% endfor %}
+            {% else %}
+            <img src="{{site.default_calendar_image}}" alt="Default Featured Image - {{ event.event_name }}">
+            {% endif %}
+        </a>
+        <h3><a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}"> {{ event.event_name }} </a></h3>
+        <p class="date"> {{event.DateTime | date: "%a, %B %d, %y"}} </p>
+    </div><!--/homeEvents__feature-->
+    {% endfor %}
+</div><!--/homeEvents-->
+<div class="homeLinks">
+    <ul class="quickLinks">
+        <li><a href="{{site.url}}about-us/our-leadership.html"><i class="fi-torso"></i> Meet Our Pastor</a></li>
+        <li><a href="{{site.url}}blog-list.html"><i class="fi-book"></i> Read Blog Posts</a></li>
+        <li><a href="{{site.url}}welcome.html"><i class="fi-map"></i> Get Directions</a></li>
+        <li><a href="#"><i class="fi-first-aid"></i> The Gospel</a></li>
+    </ul>
+</div>

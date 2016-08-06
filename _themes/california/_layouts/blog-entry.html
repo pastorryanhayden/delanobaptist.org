@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="blog-entry-page">
+    <div class="blog-entry">
+            {% if page.featured_image %}
+                {% for img in page.featured_image %}
+            <img src="{{img.url}}" alt="{{page.title}}" class="entry-image">
+                {% endfor %}
+            {% else %}
+            <img src="{{site.default_blog_image}}" alt="Default Blog Image" class="entry-image">
+            {% endif %}
+            <div class="entry-text">
+            <div class="entry-header">
+                <h3>{{page.title}}</h3>
+                <p class="description"><strong>Posted On:</strong> {{page.date_added| date: "%B %-d, %Y" }} • <strong>Author:</strong> {{page.author_name}} • <strong>Category:</strong> {{page.categories}}</p>
+            </div><!--/entry-text-->
+            <div class="entry-description">
+                {% if page.body_content %}
+                {{page.body_content | markdownify }}
+                {% endif %}
+            </div><!--/entry-description-->
+            </div><!//entry-text-->
+        </div><!--/blog-entry-->
+        <a href="{{site.url}}blog-list.html" class="button return-link"> <i class="fi-arrow-left"></i> Return to the List of Blog Posts</a>
+</div>

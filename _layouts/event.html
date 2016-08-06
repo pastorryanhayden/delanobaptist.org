@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="calendar-list">
+<div class="calendar-header">
+    <div class="wrapper">
+    <div class="calendar-header-text">
+        <h1>Calendar</h1>
+        <h3>Upcoming events in the life and ministry of our church.</h3>
+    </div><!--/calendar-header-text-->
+    <img src="assets/Calendar_icon.png" alt="">
+    </div><!--/wrapper-->
+</div><!--/calendar-header-->
+<div class="calendar-list-content">
+    <div class="calendar-list-item">
+        {% if  page.featured_image %}
+        {% for img in page.featured_image %}
+        <img src="{{img.url}}" alt="{{page.event_name}}">
+        {% endfor %}
+        {% else %}
+        <img src="{{site.default_calendar_image}}" alt="">
+        {% endif %}
+
+        <div class="details">
+            <h3><a href="#">{{page.event_name}}</a></h3>
+            <div class="details-inner">
+                <div class="details-description">
+                    {% if page.description  %}
+                    {{ page.description | markdownify | truncate: 140 }}
+                    {% endif %}
+                </div><!--/details-description-->
+                <div class="details-date">
+                    <p class="month">{{page.DateTime | date: "%b"}}</p>
+                    <p class="day">{{page.DateTime | date: "%d"}}</p>
+                </div><!--/details-date-->
+            </div><!--/details-inner-->
+        </div><!--/details-->
+    </div><!--/calendar-list-item-->
+     <div class="event-details">
+        {% if  page.body_content %}
+        {{ page.body_content | markdownify }}
+        {% else %}
+        <p>Check back soon for more details.</p>
+        {% endif %}
+    <a href="{{site.url}}calendar-list.html" class="button event-return"> <i class="fi-left-arrow"></i> Return to Calendar</a>
+    </div> <!--/event-details-->
+
+   
+</div><!--/calendar-list-content-->
+</div><!--/calendar-list-->

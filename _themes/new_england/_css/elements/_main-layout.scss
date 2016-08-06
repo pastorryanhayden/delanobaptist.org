@@ -1,0 +1,27 @@
+$max-width: em(1200) !default;
+
+body {
+	background-color: #F6F3EF; 
+}
+
+div.main-content-wrapper {
+@include grid-row();
+margin-top: em(20);
+
+}
+
+body.two-column {
+	article.main {
+	@include breakpoint(small down) {
+		@include grid-column;
+	}
+	@include grid-column(8);
+
+	}
+	div.sidebar {
+		@include breakpoint(small down) {
+		@include grid-column;
+	}
+	@include grid-column(4);
+	}
+}

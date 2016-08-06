@@ -1,0 +1,129 @@
+$foundation-palette: (
+  primary: #319827,
+  secondary: #5C3F23,
+  success: #3C6E71,
+  warning: #4B4E6D,
+  alert: #319827,
+);
+@include add-foundation-colors;
+
+header {
+    background: darken(#fff, 10%);
+}
+.infoBar {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: darken($warning-color, 15%);
+    display: flex;
+    align-items: center;
+
+    h1 {
+    width: 367px;
+    height: 80px;
+    flex-grow: 2;
+    @include breakpoint (725px down) {
+        flex-grow:1;
+        flex-shrink: 2;
+    }
+    }
+
+    h1 a {
+    text-indent: -5000px;
+    background: url(../logo.png) no-repeat center center;
+    width: 367px;
+    height: 78px;
+    line-height: 65px;
+    display: block;
+    margin-left: 20px;
+    margin-top: 4px;
+    }
+    .service-times {
+        display: none;
+        @include breakpoint (large){
+            display: block;
+            max-width: 330px;
+            text-align: right;
+            border-right: 1px solid $white;
+            flex-grow: 1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-right: 10px;
+        }
+        li {
+            line-height: 20px;
+            font-size: 13px;
+        }
+        li span {
+            color: $primary-color;
+            margin-left: 35px;
+        }
+    }
+    .contact {
+        display: none;
+        @include breakpoint (740px){
+                    display: block;
+                    max-width: 350px;
+                    text-align: right;
+                    flex-grow: 1;
+                    padding-right: 20px;
+
+        }
+        p {
+            margin-bottom: 0;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }
+}
+
+.MainNavigation {
+    display: none;
+    @include breakpoint (726px){
+        display: block;
+         background: $secondary-color;
+    }
+
+    ul.dropdown.menu {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    ul li a {
+        color: $white;
+        font-size: 17px;
+        font-weight: 600;
+        font-family: $header-font-family;
+    }
+}
+
+.MainNavigation ul li ul li a {
+    color: darken($warning-color, 15%);
+}
+
+.MobileNavigation {
+    background: $secondary-color;
+    padding-right:30px;
+    text-align: right;
+
+    button {
+        color: $white;
+        font-size: 30px;
+        font-family: $header-font-family;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+
+    @include breakpoint (726px) {
+        display: none;
+    }
+}
+.off-canvas-wrapper-inner, .off-canvas {
+    min-height: 100vh;
+}
+
+.off-canvas-content, .off-canvas-content {
+    box-shadow: none;
+}

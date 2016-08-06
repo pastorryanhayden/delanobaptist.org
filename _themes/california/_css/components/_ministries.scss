@@ -1,0 +1,240 @@
+.ministriesPage__Title {
+    height: 300px;
+    text-align: center;
+    background: url(http://storage.biblebaptistmattoon.org/media/patch.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.ministriesPage__Title h1 {
+    background: rgba($primary-color, .8);
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.ministriesDescription {
+    background: rgba($black, .9);
+    width: 100%;
+    padding: 10px 0 10px 0;
+}
+
+.ministriesDescription p {
+    color: $white;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+}
+
+.ministriesPage__Content {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 40vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    @include grid-row;
+
+
+
+}
+
+.ministryInfo {
+    background: $primary-color;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-bottom: 30px;
+    color: $white;
+
+    @include breakpoint(large) {
+        flex-direction: row;
+    }
+}
+
+.ministryInfo-ministry {
+    border-bottom: 1px solid $white;
+    padding-bottom: 20px;
+
+    @include breakpoint(large) {
+        border-right: 1px solid $white;
+        border-bottom: none;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+
+    p span {
+        font-weight: normal;
+    }
+
+
+}
+
+.ministryInfo-leader {
+    padding-top: 20px;
+
+    @include breakpoint(large) {
+        padding-top: 0;
+        padding-left: 20px;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+
+    p span {
+        font-weight: normal;
+    }
+
+    img.thumbnail {
+        float: right;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    p.leaderDescription {
+        font-style: italic;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+}
+
+
+.ministriesPage__Content-main-content {
+    @include grid-column(12);
+    @include breakpoint(large){
+    @include grid-column(8);
+    border-right: 1px solid $dark-gray;
+    min-height: 90vh;
+
+    img {
+    text-align:center;
+    @include thumbnail;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+
+}
+    }
+
+}
+
+
+.ministriesPage__Content-secondary-content {
+    @include grid-column(12);
+    border-top: 1px solid $dark-gray;
+    padding-top: 30px;
+    @include breakpoint(large){
+    @include grid-column(4);
+    border-top: none;
+    padding-top: none;
+}
+
+h3 {
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid $secondary-color;
+}
+
+.ministriesLogo, .ministriesCalendar, .ministriesPhotos {
+    margin-bottom: 40px;
+}
+
+}
+// Start Foundation 6 Event Listing
+
+.ministriesPage {
+    .event {
+      padding: 10px 10px 10px 0;
+      display: table;
+    }
+
+    .event-date {
+      min-width: 60px;
+      margin: 0 auto 1rem;
+      display: table-cell;
+      width: auto;
+
+
+      .event-month {
+        margin: 0;
+        background: $secondary-color;
+        padding: 0.3rem .6rem;
+        text-align: center;
+        color: $white;
+        font-size: .8rem;
+
+      }
+
+      .event-day {
+        margin: 0;
+        border: 1px solid $secondary-color;
+        padding: .4rem .6rem;
+        text-align: center;
+        font-size: .8rem;
+        color: $secondary-color;
+      }
+    }
+
+    // Gallery
+    .ministriesPhotos .galleryWrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-top: 15px;
+        a {
+            max-width: 150px;
+        }
+
+    }
+
+
+    .event-desc {
+      padding: 0 0 0 1rem;
+      text-align: left;
+      display: table-cell;
+      vertical-align: top;
+
+
+      .event-desc-header {
+        margin-bottom: 0;
+        margin-top: -10px;
+        padding: 0;
+        
+        a {
+            color: $secondary-color;
+            font-size: 20px;
+        }
+      }
+
+      .event-desc-detail {
+        margin: 0 0 0.25rem;
+        padding: 0;
+        font-size: 13px;
+      }
+
+      .event-desc-time {
+        font-weight: bold;
+      }
+
+      .rsvp.button {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        margin: 0;
+      }
+    }
+}

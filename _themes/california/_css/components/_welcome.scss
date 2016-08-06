@@ -1,0 +1,142 @@
+.welcome {
+
+}
+.welcomeHeader {
+min-height: 400px;
+background: url(http://storage.biblebaptistmattoon.org/media/welcome.jpg) no-repeat center center;
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+
+h1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: rgba($primary-color, .7);
+    text-align: center;
+    margin-bottom: 0;
+    color: $white;
+    font-weight: bold;
+}
+}
+.welcomeIntro {
+    background: $light-gray;
+    .content {
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 30px;
+        min-height: 350px;
+        h2 {
+            font-weight: bold;
+        }
+        img {
+            float: right;
+            border-radius: 400px;
+            margin-left: 40px;
+        }
+        p {
+            max-width: 700px;
+        }
+    }
+
+}
+.welcomeServices {
+    background: url(http://storage.biblebaptistmattoon.org/media/bible3.jpg) no-repeat center center;
+    background-size: cover;
+
+
+    .wrapper {
+        background: rgba($secondary-color, .85);
+        height: 100%;
+    }
+
+    .content {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: right;
+        color: $white;
+        min-height: 300px;
+        padding:30px;
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h2 {
+            font-weight: bold;
+        }
+        p {
+            max-width: 700px;
+        }
+    }
+
+}
+.welcomeKids {
+
+    .wrapper {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        @include breakpoint(776px){
+        flex-direction: row;
+        justify-content: space-between;
+ 
+    }
+    }
+    .content {
+        flex-shrink: 1;
+    }
+    h2 {
+        font-weight: bold;
+        color: $primary-color;
+    }
+    p {
+            max-width: 600px;
+        }
+    .photos {
+        min-width: 350px;
+        max-width: 380px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        
+        img {
+            border-radius: 200px;
+            border: 2px solid $primary-color;
+            margin-bottom: 20px;
+        }
+    }
+
+
+}
+.welcomeLocation {
+    background: $medium-gray;
+    color: $white;
+
+    .content {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    h2 {
+        font-weight: bold;
+    }
+    .text {
+        max-width: 700px;
+        padding-right: 30px;
+    }
+    #map {
+        height: 400px;
+        flex-grow: 1;
+        min-width: 400px;
+
+    }
+}

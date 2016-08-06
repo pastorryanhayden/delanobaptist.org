@@ -1,0 +1,75 @@
+.hero {
+    background: url(http://storage.thefoolishnessofpreaching.com/sfc/kitchens/hero.jpg) no-repeat top center;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.hero .hero-wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+
+.hero h1 {
+    color: $white;
+    width: 50%;
+    background: #4F3E33;
+    padding: 20px;
+}
+
+.latest-sermons {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+
+    .sermon-teaser {
+        @include grid-column(12);
+        @include breakpoint(medium){
+        @include grid-column(3);
+            }
+    }
+    .sermon-text {
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .sermon-text h5 a { 
+        color: darken($primary-color, 25%);
+    }
+}
+
+.latest-sermons h3 {
+    text-align: center;
+}
+
+.latest-sermons ul {
+    list-style-type: none;
+    margin-left: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.latest-sermons ul li {
+    width: 275px;
+    height: 155px;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.latest-sermons ul li a {
+    color: $white;
+    background-color: #4F3E33;
+    padding: 5px;
+}
+
+h3.latest-article {
+    text-align: center;
+    padding-top: 10px;
+}

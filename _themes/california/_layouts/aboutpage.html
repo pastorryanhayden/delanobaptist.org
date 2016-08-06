@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{% if page.featured_image %}
+{% for img in page.featured_image %}
+<style>
+    .aboutPage__Title {
+        background: url({{img.url}}) no-repeat;
+        background-size: cover;
+
+    }
+</style>
+{% endfor %}
+{% else %}
+<style>
+    .aboutPage__Title {
+        background: url({{site.default_about_image}}) no-repeat;
+         background-size: cover;
+    }
+</style>
+
+{% endif %}
+
+<div class="aboutPage">
+    <div class="aboutPage__Title">
+        <h1>{{page.title}}</h1>
+    </div><!--/aboutPage__Title-->
+    <div class="aboutPage__Content">
+        {% if page.body_content %}
+        {{page.body_content | markdownify }}
+        {% endif %}
+    </div><!--/aboutPage__Content-->
+</div><!--/aboutPage-->

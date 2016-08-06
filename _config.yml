@@ -1,0 +1,97 @@
+# What's the name of the church?
+title: Immanuel Baptist Church
+# Give a brief description of the church
+description: > # this means to ignore newlines until "baseurl:"
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus blanditiis odio corrupti, 
+    illum architecto consequuntur, quaerat unde repudiandae qui temporibus! Fuga maxime molestiae hic impedit 
+    sit sint perferendis rerum unde.
+# Leave this alone
+baseurl: "" # the subpath of your site, e.g. /blog
+# Change this to the domain when you are finished and ready to publish.
+
+url: "http://delanobaptist.org/" # the base hostname & protocol for your site | Switch to http://cranesvillebiblechurch.com/" Before running Glynn.  Afterwards change it back to http://localhost:4000/
+
+# This is the path to the default images.  If you add different default images you can change them here.
+default_header_image: "assets/default_header.jpg"
+default_sermon_image: "assets/default_header.jpg"
+default_blog_image: "assets/default_header.jpg"
+default_about_image: "assets/default_header.jpg"
+default_calendar_image: "assets/calendar_default.jpg"
+
+# Service Schedule
+service_schedule: |
+  <li>Sunday School<span> 10:00AM</span></li>
+  <li>Morning Worship<span>11:00AM</span></li>
+  <li>Evening Worship<span> 2:00PM</span></li>
+  <li>Wednesday Bible Study<span> 7:00PM</span></li>
+
+# Header contact
+header_contact: |
+  2327 Oxford Street, Delano, California 93215 <br>
+  661-725-0479 • info@delanobaptist.org<br>
+  
+twitter: 
+facebook: "https://www.facebook.com/profile.php?id=100006405525766"
+youtube: 
+
+# Airtable API Stuff
+airtable:
+  apikey: "keyRTLlrVS02vC3Vx"
+  blog: "appemSttDE2EUGHNP"
+  sermons: "appR4YoNuehPBcHi9"
+  series: "appR4YoNuehPBcHi9"
+  ministries: "appcRxPIIFjfDWFvN"
+  photos: "appcRxPIIFjfDWFvN"
+  events: "appcRxPIIFjfDWFvN"
+  abouts: "appcj5H57pRs6MloL"
+
+# LEAVE EVERYTHING ELSE ALONE!!
+
+# Build settings
+markdown: kramdown
+ 
+# Exclude
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js 
+  - bower_components
+keep_files:
+  - css
+
+
+page_gen:
+  - data: 'ministries'
+    template: 'ministries'
+    name: 'name'
+    dir: 'ministries'
+  - data: 'series'
+    template: 'series'
+    name: 'title'
+    dir: 'series'
+  - data: 'sermons'
+    template: 'sermon'
+    name: 'title'
+    dir: 'sermons'
+  - data: 'blog'
+    template: 'blog-entry'
+    name: 'title'
+    dir: 'blog-posts'
+  - data: 'abouts'
+    template: 'aboutpage'
+    name: 'title'
+    dir: 'about-us'
+  - data: 'events'
+    template: 'event'
+    name: 'event_name'
+    dir: 'events'
+  - data: 'abouts'
+    template: 'about'
+    name: 'title'
+    dir: 'about-us'
+
+ftp_host: 'biblebaptistmattoon.org'
+ftp_dir: 'delanobaptist.org/'
+ftp_passive: false
+ftp_username: 'ryahay11'
+ftp_password: '@88Volvocj'

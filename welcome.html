@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<style>
+    .welcomeHeader {
+        min-height: 400px;
+        background: url(http://dl.dropbox.com/u/47159282/0376.jpg) no-repeat center center;
+}
+
+    .welcomeServices {
+    background: url({{site.url}}{{site.default_header_image}}) no-repeat center center;
+    }
+
+</style>
+
+<div class="welcome"><!-- This is a wrapper for the whole page-->
+
+    <div class="welcomeHeader">
+        <h1>Welcome to {{site.title}}</h1>
+    </div><!-- /welcomeHeader -->
+
+
+    <div class="welcomeIntro">
+        <div class="content">
+        <img src="http://dl.dropbox.com/u/47159282/5756.jpg" alt="">
+       {% markdown welcome-1.md %}
+        
+        </div>
+    </div><!-- /welcomeIntro -->
+    
+    <div class="welcomeServices">
+    <div class="wrapper">
+    <div class="content">
+    {% markdown welcome-2.md %}
+        </div><!-- content -->
+        </div><!-- wrapper -->
+    </div><!-- /welcomeServices -->
+
+    <div class="welcomeLocation">
+        <div class="content">
+        <div class="text">
+        {% markdown welcome-3.md %}
+        </div><!-- /text -->
+        <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.571001541877!2d-119.24157081816776!3d35.79036081782848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80eae5fc0bd28875%3A0x3e3b213e4788402a!2sImmanuel+Baptist+Church!5e0!3m2!1sen!2sus!4v1470417817996" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div><!-- /map -->
+        </div><!-- /content -->
+    </div><!-- /welcomeLocation -->
+
+</div><!-- /welcome -->

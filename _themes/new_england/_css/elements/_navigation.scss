@@ -1,0 +1,375 @@
+body {
+margin: 0;
+}
+
+/*Navigation Styles*/
+
+// For the desktop nav
+
+
+nav.main-navigation ul.navigation {
+
+	display: none;
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 0;
+
+	@include breakpoint(760px) {
+
+	display: flex;
+	justify-content: space-around;
+	height: 40px;
+	border-bottom: 1px solid $medium-gray;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+
+	li a {
+	font-size: 18px;
+	line-height: 40px;
+	text-transform: uppercase;
+	font-family: $header-font-family;
+	color: $medium-gray;
+	}
+
+	}
+}
+
+
+nav.main-navigation ul li.dropdown > a:after {
+	content: ' \f107';
+	font: 16px/16px fontawesome;
+}
+
+nav.main-navigation ul ul {
+	display: none;
+	list-style-type: none;
+	margin-left: 0;
+
+}
+
+nav.main-navigation ul li:hover ul {
+	display: block;
+	background: $dark-gray;
+	z-index:50;
+	position: relative;
+
+
+}
+
+
+nav.main-navigation ul li:hover ul li {
+	padding-left: 20px;
+	padding-right: 20px;
+	border-top: 1px solid $medium-gray;
+}
+
+nav.main-navigation ul li:hover ul li:hover {
+	background: lighten($dark-gray, 20%);
+}
+
+
+nav.main-navigation ul li:hover ul li:nth-child(1) {
+	border-top: none;
+}
+
+nav.main-navigation ul li:hover ul li a{
+	color: $medium-gray;
+}
+
+// For the mobile nav
+
+.nav-trigger {
+  position: absolute;
+  opacity: 0;
+}
+
+.MobileNavigation {
+	@include breakpoint(761px) {
+		display: none;
+	}
+}
+
+
+.hamburger-label {
+  z-index: 5;
+  display: block;
+  width: inherit;
+  height: 16px;
+  font: $body-font-family;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-trigger:checked ~ .hamburger-label:before {
+  content: '\f00d';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font: 20px/20px fontawesome;
+  text-align: center;
+  color: white;
+}
+
+
+
+.MobileNavigation__sidebar {
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: $dark-gray;
+	color: $dark-gray;
+	transition: all .3s;
+	font-size: 20px;
+	line-height: 35px;
+	text-align: left;
+
+}
+
+.nav-trigger:checked ~ .MobileNavigation__sidebar {
+  width: 60%;
+  height: 100%;
+  padding-top: 30px;
+  z-index: 4;
+  top: 0;
+  right: 0;
+}
+
+
+.MobileNavigation > div {
+		display: flex;
+		justify-content: space-around;
+		border-bottom: 1px solid $medium-gray;
+		height: 40px;
+		background: $dark-gray;
+		}
+.MobileNavigation > div > div {
+			border-right: 1px solid $medium-gray;
+			flex-basis: 33.3333%;
+		}
+
+.MobileNavigation > div > div:last-child {
+	border-right: none;
+}
+
+.MobileNavigation > div > div a {
+			color: $medium-gray;
+			font-family: $body-font-family;
+			text-align: center;
+			display: block;
+			line-height: 40px;
+			font-size: 16px;
+
+			}
+
+div.menu-button {
+
+			border-right: none;
+			input {
+				text-align: center;
+			}
+			label {
+			cursor: pointer;
+			line-height: 40px;
+			font-size: 16px;
+				color: white;
+			width: 100%;
+			font-weight: normal;
+			text-align: center;
+			}
+
+		}
+
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout li:first-child {
+	margin-top: 9px;
+}
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout li:last-child {
+	border-bottom: 1px solid $medium-gray;
+}
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout li {
+	border-top: 1px solid $medium-gray;
+}
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout li a {
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-transform: uppercase;
+}
+
+
+.MobileNavigation__sidebar ul li.dropdown > a:after {
+	content: ' \f105';
+	font: 16px/16px fontawesome;
+}
+
+.MobileNavigation__sidebar ul li.dropdown:hover > a:after {
+	content: ' \f107';
+	font: 16px/16px fontawesome;
+}
+
+.MobileNavigation__sidebar ul ul {
+	display: none;
+}
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout  li.dropdown:hover ul {
+	display: block;
+	margin-left: 0;
+}
+
+
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout  li.dropdown:hover ul li {
+	padding-left: 0;
+
+}
+
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout  li.dropdown:hover ul li a {
+	padding-left: 40px;
+}
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout  li.dropdown:hover ul li:first-child {
+	margin-top: 0;
+	border-top: 1px solid $medium-gray;
+}
+
+.MobileNavigation__sidebar ul.MobileNavigation__slideout  li.dropdown:hover ul li:last-child {
+	border-bottom: none;
+}
+
+.MobileNavigation__sidebar ul li:hover ul li a:before {
+	content: '\f101\ ';
+	font: 16px/16px fontawesome;
+}
+
+
+.MobileNavigation__sidebar ul li:hover ul li:nth-child(1) {
+	border-top: none;
+}
+
+.MobileNavigation__sidebar ul li:hover ul li a{
+	color: $medium-gray;
+}
+
+
+
+// Info Header
+
+.InfoHeader {
+
+	background-color: $dark-gray;
+	color: $light-gray;
+}
+
+.InfoHeaderWrapper {
+		@include breakpoint(small down) {
+		display: block;
+		min-height: 180px;
+		}
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		max-width: 1400px;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+div.logo {
+
+	@include breakpoint(small down) {
+	width: 100%;
+	border-bottom: 1px solid $medium-gray;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	}
+
+	flex-basis: 1000px;
+	flex-shrink: 2;
+}
+
+div.logo a {
+
+	@include breakpoint(small down) {
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+	text-indent: -7000px;
+	background: url(../logo.png); 
+	width: 210px;
+	height: 53px;
+	line-height: 53px;
+	display: block;
+	cursor: pointer;
+}
+
+
+.InfoHeader__info {
+
+	flex-basis: 400px;
+	/*float: right;*/
+	display: flex;
+	flex-shrink: 0;
+
+		@include breakpoint(small down) {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		width: 400px;
+	}
+}
+
+.InfoHeader__info__ServiceTimes ul{
+	border-right: 1px solid $medium-gray;
+	padding-right: 24px;
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.InfoHeader__info__ContactInfo ul {
+	padding-left: 15px;
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.InfoHeader__info__ContactInfo ul li:nth-child(3) {
+	padding-left: 10px;
+}
+
+.InfoHeader__info__ServiceTimes ul li, .InfoHeader__info__ContactInfo ul li {
+	font-size: 12px;
+	line-height: 14px;
+	color: $medium-gray;
+}
+
+.InfoHeader__info__ContactInfo ul li a i:nth-child(1) {
+	margin-left: 10px;
+}
+
+.InfoHeader__info__ContactInfo ul li a i {
+	font-size: 12px;
+	color: $medium-gray;
+	margin-right: 13px;
+}
+
+.InfoHeader__info__ContactInfo ul hr {
+	margin-top: 3px;
+	margin-bottom: 6px;
+	width: 100%;
+	border-color: $medium-gray;
+}

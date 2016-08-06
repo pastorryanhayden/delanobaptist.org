@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="blogPostPage__header">
+     <div class="wrapper">
+        <h1>Our Blog</h1>
+        <h2>Articles and news from our pastor and staff.</h2>
+        </div><!--/bloglistContent__header-->
+    </div>
+</div><!--/blogPostPage__header-->
+<div class="blogPostContent">
+    <div class="blogPostContent__header">
+         {% if page.featured_image %}
+                {% for img in page.featured_image %}
+            <img src="{{img.url}}" alt="{{page.title}}" class="entry-image">
+                {% endfor %}
+            {% else %}
+            <img src="{{site.default_blog_image}}" alt="Default Blog Image" class="entry-image">
+            {% endif %}
+    <h1>{{page.title}}</h1>
+    <p class="blogPostContent__tagline">Posted on {{page.date_added| date: "%B %-d, %Y" }} by {{page.author_name}} in <span>{{page.categories}}</span></p>
+    </div><!--/blogPostContent__header-->
+    <div class="blogPostContent__Content">
+       {% if page.body_content %}
+                {{page.body_content | markdownify }}
+                {% endif %}
+    </div><!--/blogPostContent__Content-->
+    <!--<div class="blogPostContent__Comments">
+        <h2>Comments</h2>
+        <p class="comments-tagline">Leave a comment below:</p>
+    </div><!--blogPostContent__Comments-->
+</div><!--/blogPostContent-->

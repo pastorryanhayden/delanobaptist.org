@@ -1,0 +1,25 @@
+---
+layout: default
+---
+  <main>
+    <div class="about_page">
+      <div class="header">
+        <h1>About Chris Kitchens</h1>
+      </div>
+      <div class="about_content">
+      {% for item in site.data.abouts %}
+        <div class="about_section">
+          <h2>{{item.page_name}}</h2>
+          {% if item.featured_image %}
+          {% for img in item.featured_image %}
+          <img src="{{img.url}}" alt="{{item.page_name}}">
+          {% endfor %}
+          {% endif %}
+          {% if item.body_content %}
+          {{item.body_content | markdownify }}
+          {% endif %}
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </main>

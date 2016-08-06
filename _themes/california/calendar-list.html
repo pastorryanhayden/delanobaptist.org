@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="calendar-list">
+<div class="calendar-header">
+    <div class="wrapper">
+    <div class="calendar-header-text">
+        <h1>Calendar</h1>
+        <h3>Upcoming events in the life and ministry of our church.</h3>
+    </div><!--/calendar-header-text-->
+    <img src="assets/Calendar_icon.png" alt="">
+    </div><!--/wrapper-->
+</div><!--/calendar-header-->
+<div class="calendar-list-content">
+    {% for event in site.data.events %}
+    <div class="calendar-list-item">
+        {% if  event.featured_image %}
+        {% for img in event.featured_image %}
+        <img src="{{img.url}}" alt="{{event.event_name}}">
+        {% endfor %}
+        {% else %}
+        <img src="{{site.default_calendar_image}}" alt="">
+        {% endif %}
+
+        <div class="details">
+            <h3><a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}">{{event.event_name}}</a></h3>
+            <div class="details-inner">
+                <div class="details-description">
+                    {% if event.description  %}
+                    {{ event.description | markdownify | truncate: 140 }}
+                    {% endif %}
+                    <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}" class="button hollow">More Details</a>
+                </div><!--/details-description-->
+                <div class="details-date">
+                    <p class="month">{{event.DateTime | date: "%b"}}</p>
+                    <p class="day">{{event.DateTime | date: "%d"}}</p>
+                </div><!--/details-date-->
+            </div><!--/details-inner-->
+        </div><!--/details-->
+    </div><!--/calendar-list-item-->
+    {% endfor %}
+   
+</div><!--/calendar-list-content-->
+</div><!--/calendar-list-->

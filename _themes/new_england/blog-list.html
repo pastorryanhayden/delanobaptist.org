@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="bloglistContent__header">
+    <div class="wrapper">
+        <h1>Our Blog</h1>
+        <h2>Articles and news from our pastor and staff.</h2>
+        </div><!--/bloglistContent__header-->
+    </div>
+<div class="bloglistContent">
+    <div class="bloglistContent__MainList">
+        {% for post in site.data.blog %}
+        <div class="bloglistItem">
+            <div class="bloglistItem__thumbnail">
+           {% if post.featured_image %}
+                {% for img in post.featured_image %}
+            <img src="{{img.url}}" alt="{{post.title}}" class="entry-image">
+                {% endfor %}
+            {% else %}
+            <img src="{{site.default_blog_image}}" alt="" class="entry-image">
+            {% endif %}
+            </div><!--/bloglistitem__thumbnail-->
+            <div class="bloglistItem__teaser">
+                <h3>{{post.title}}</h3>
+                <p class="blogPostContent__tagline">Posted on {{post.date_added| date: "%B %-d, %Y" }} by {{post.author_name}} in <span>{{post.categories}}</span></p>
+                {{post.body_content | truncate: 75 }}
+                <a href="{{ post.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}" class="button">Read More</a>
+            </div><!--/bloglistItem__teaser-->
+        </div><!--/bloglistItem-->
+       {% endfor %}
+    </div><!--/end main list-->
+</div><!--/bloglistContent-->

@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+  <main>
+    <div class="sermonslistContent__header">
+      <div class="wrapper">
+        <h1>Sermons</h1>
+        <h2>The preaching ministry of Pastor Chris Kitchens</h2>
+      </div>
+    </div>
+    <div class="sermonslistContent">
+    <div class="sermonslistContent__MainList">
+        <h2>All Sermons:</h2>
+    {% for sermon in site.data.sermons %}
+        <div class="sermonslistItem">
+            <div class="sermonslistItem__thumbnail">
+                {% if sermon.series_featured_image %}
+                    {% for img in sermon.series_featured_image %}
+                    <img src="{{img.url}}" alt="{{sermon.series_title}}">
+                    {% endfor %}
+                {% else %}
+                    <img src="http://placehold.it/560x315?text=sermons+graphic" alt="">
+                {% endif %}
+            </div><!--/sermonslistitem__thumbnail-->
+            <div class="sermonslistItem__teaser">
+            <div class="sermonslistItem__title">
+                <h3><a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}">{{sermon.title}}</a></h3>
+                <ul class="action__buttons">
+                    {% if sermon.sermon_mp3 %}
+                    {% for item in sermon.sermon_mp3 %}
+                    <li><a href="{{item.url}}" alt="play"><i class="fi-play"></i></a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if sermon.handout %}
+                    {% for item in sermon.handout %}
+                    <li><a href="{{item.url}}" alt="handout"><i class="fi-page-pdf"></i></a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if sermon.slides %}
+                    {% for item in sermon.slides %}
+                    <li><a href="{{item.url}}" alt="slides"><i class="fi-projection-screen"></i></a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul><!--/action__buttons-->
+                </div><!--/sermonslistItem__title-->
+                <ul class="sermonslistItem__tagline">
+                <li><i class="fi-calendar"></i> {{sermon.date}}</li>
+                <li><i class="fi-clock"></i> {{sermon.service}}</li>
+                <li><i class="fi-torso-business"></i> {{sermon.speaker_name}}</li>
+                <li><i class="fi-book"></i> {{sermon.bible_text}}</li>
+                </ul>
+                <p class="sermonslistItem__description">{% if sermon.body_content %}{{sermon.body_content | markdownify | truncate: 140 }}{% endif %}</p>
+                {% if sermon.sermon_mp3 %}
+                {% for item in sermon.sermon_mp3 %}
+                <audio class="sermonslistPlayer" controls>
+                    <source src="{{item.url}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                <a href="{{item.url}}" class="button secondary" target="blank" download><i class="fi-download"></i> Download</a>
+                {% endfor %}
+                {% endif %}
+                <a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}" class="button" >View Sermon</a>
+            </div><!--/sermonslistItem__teaser-->
+        </div><!--/sermonslistItem-->
+     {% endfor %}
+    </div><!--/end main list-->
+</div><!--/sermonslistContent-->
+{% include serieslist.html %}
+  </main>
+  

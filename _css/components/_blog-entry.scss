@@ -1,0 +1,33 @@
+.blog-entry-page {
+    
+    max-width: 850px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px inherit 30px inherit;
+
+    
+.blog-entry {
+    @include grid-row();
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-entry:last-child {
+    border-bottom: none;
+}
+
+.entry-image {
+    margin-bottom: 30px;
+   
+}
+.entry-text {
+   
+}
+.entry-header {
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 20px;
+}
+
+
+}

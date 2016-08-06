@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<style>
+    .welcomeHeader {
+        min-height: 400px;
+        background: url({{site.default_header_image}}) no-repeat center center;
+}
+
+    .welcomeServices {
+    background: url({{site.default_header_image}}) no-repeat center center;
+    }
+
+</style>
+
+<div class="welcome"><!-- This is a wrapper for the whole page-->
+
+    <div class="welcomeHeader">
+        <h1>Welcome to Generic Baptist Church</h1>
+    </div><!-- /welcomeHeader -->
+
+
+    <div class="welcomeIntro">
+        <div class="content">
+        
+        {% markdown welcome-1.md %}
+        
+        </div>
+    </div><!-- /welcomeIntro -->
+    
+    <div class="welcomeServices">
+    <div class="wrapper">
+    <div class="content">
+    {% markdown welcome-2.md %}
+        </div><!-- content -->
+        </div><!-- wrapper -->
+    </div><!-- /welcomeServices -->
+
+    <div class="welcomeLocation">
+        <div class="content">
+        <div class="text">
+        {% markdown welcome-3.md %}
+        </div><!-- /text -->
+        <div id="map">
+            
+        </div><!-- /map -->
+        <script>
+          function initMap() {
+            var mapDiv = document.getElementById('map');
+            var myLatLng = { lat: {{site.map_lat}}, lng: {{site.map_long}}  };
+            var churchPos = { lat: {{site.map_lat}}, lng: {{site.map_long}} };
+            var map = new google.maps.Map(mapDiv, {
+          center: myLatLng,
+          zoom: 15
+        });
+        var image = 'https://dl.dropboxusercontent.com/u/47159282/churchIcon.png';
+        var marker = new google.maps.Marker({
+            position: churchPos,
+            map: map,
+            title: 'Cranesville Bible Church',
+            icon: image
+        });
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+      }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+        </div><!-- /content -->
+    </div><!-- /welcomeLocation -->
+
+</div><!-- /welcome -->

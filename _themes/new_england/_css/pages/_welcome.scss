@@ -1,0 +1,71 @@
+.welcome {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background: url(../welcomebackground.jpg) no-repeat top center;
+    background-size: contain;
+    padding-top: 100px;
+    min-height: 1200px;
+}
+.welcome__Header{
+    @include grid-row;
+
+    h1 {
+        color: $light-gray;
+        text-shadow: 1px 1px 2px $secondary-color;
+        border-bottom: none;
+        font-size: 60px;
+
+        @include breakpoint(small only) {
+        color: $dark-gray;
+        font-size: 35px;
+        text-shadow: none;
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+
+    }
+}
+.welcome__Wrapper{
+    @include grid-row;
+    background: $white;
+    min-height: 1000px;
+}
+.welcome__Menu {
+    
+    border-bottom: 1px solid $dark-gray;
+    display: flex;
+    justify-content: space-around;  
+    list-style-type: none;
+    margin:0;
+    font-size: 20px;
+    line-height: 50px;
+    width: 100%;
+    background: $white;
+
+    @include breakpoint(small only) {
+        display: none;
+    }
+
+    li a.active {
+        border-bottom: 1px dotted $text-color;
+    }
+}
+.welcome__Content {
+    div {
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-top: 45px;
+        border-bottom: 1px solid $medium-gray;
+        padding-bottom: 45px;
+    }
+    div:last-child {
+        border-bottom: none;
+    }
+    h2 {
+        border-top: none;
+        border-bottom: none;
+        font-size: 30px;
+        width: 100%;
+    }
+}

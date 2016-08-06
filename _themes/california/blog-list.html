@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="blog-list-page">
+    <div class="header">
+        <h2>Our Blog</h2>
+        <h3>Articles and Church News from our Pastor and Staff</h3>
+    </div><!--/header-->
+    <div class="blog-listings">
+            {% for post in site.data.blog %}
+        <div class="blog-entry">
+            {% if post.featured_image %}
+                {% for img in post.featured_image %}
+            <img src="{{img.url}}" alt="{{post.title}}" class="entry-image">
+                {% endfor %}
+            {% else %}
+            <img src="{{site.default_blog_image}}" alt="" class="entry-image">
+            {% endif %}
+            <div class="entry-text">
+            <div class="entry-header">
+                <h3><a href="{{ post.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}">{{post.title}}</a></h3>
+                <p class="description"><strong>Posted On:</strong> {{post.date_added| date: "%B %-d, %Y" }} • <strong>Author:</strong> {{post.author_name}} • <strong>Category:</strong> {{post.categories}} </p>
+            </div><!--/entry-text-->
+            <div class="entry-description">
+                {{post.body_content | truncate: 75 }}
+                <a href="{{ post.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}" class="button">Read More</a>
+            </div><!--/entry-description-->
+            </div><!//entry-text-->
+        </div><!--/blog-entry-->
+            {% endfor %}
+    </div><!--/blog-listings-->
+</div><!--/blog-list-page-->

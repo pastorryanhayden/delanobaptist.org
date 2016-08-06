@@ -1,0 +1,108 @@
+footer {
+	width: 100%;
+	background: $dark-gray; 
+	z-index: 2;
+	min-height: 200px;
+
+	div.footer-wrapper {
+		@include grid-row;
+		padding-top: 25px;
+	}
+	div.footer-main {
+	@include grid-column(9);
+	@include breakpoint (small down) {
+		@include grid-column(12);
+		
+	}
+		ul {
+			float: left;
+			margin-top: em(30);
+			margin-left: em(30);
+			list-style-type: none;
+			margin-left: 0;
+		}
+
+		ul li {
+			float: left;
+			margin-left: 5px;
+			font-size: em(13);
+		}
+
+		ul li:first-child {
+			margin-left: 0;
+		}
+
+			ul li:after {
+			content: " /  ";
+			color: $light-gray;
+		}
+		ul li:last-child:after {
+			content: none;
+		}
+		ul li a {
+			color: $medium-gray;
+		} 
+
+		p {
+			color: darken($light-gray, 30%);
+			font-size: em(11);
+			clear: left;
+			margin-left: em(42);
+			max-width: 400px;
+			@include breakpoint(small down){
+			padding-right: em(30);
+		}
+		}
+
+		p a {
+			color: $light-gray;
+		}
+
+	}
+	div.footer-contact {
+	@include grid-column(3);
+	
+	@include breakpoint (small down) {
+		@include grid-column(12);
+		
+	}
+
+	p.logo {
+		background: url(logo.png) no-repeat;
+		text-indent: -4000px;
+		width: 200px;
+		height: 60px;
+		background-size: contain;
+		margin-top: em(30);
+		padding-bottom: 4px;
+		margin-bottom: 4px;
+		border-bottom: 1px solid $medium-gray;
+	@include breakpoint (small down) {
+		margin-left: em(30);
+	}	
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		width: 200px;
+		list-style-type: none;
+		margin-left: 0;
+		margin-bottom: em(30);
+		@include breakpoint (small down) {
+		margin-left: em(30);
+	}	
+	}
+
+	ul li a {
+		color: $light-gray;
+		font-size: em(12);
+
+		span i.fa-stack-1x {
+			color: $dark-gray;
+		}
+	}
+
+	}
+
+}

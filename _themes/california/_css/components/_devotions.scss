@@ -1,0 +1,64 @@
+.devotions {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+    @include breakpoint (medium) {
+       flex-direction: row; 
+       justify-content: space-around;
+    }
+    }
+.devotions .devo {
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+    
+    h3 {
+        font-size: 1.7em;
+        margin-bottom: 0;
+        font-weight: bold;
+
+    }
+    p {
+        font-size: 1em;
+        line-height: .5em;
+    }
+} 
+
+.single-devotion {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50vh;
+    padding: 30px;
+}
+.single-devotion .devo-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(medium){
+        flex-direction: row;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        flex-shrink: 0;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.devo-content {
+    margin-left: 30px;
+
+    audio {
+        width: 100%;
+    }
+
+}

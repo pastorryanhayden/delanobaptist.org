@@ -1,0 +1,9 @@
+<head>
+  <meta charset="utf8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="Chris Kitchens">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+  <script src="https://use.fontawesome.com/00d641a760.js"></script>
+</head>

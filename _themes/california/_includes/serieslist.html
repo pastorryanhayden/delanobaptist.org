@@ -1,0 +1,21 @@
+
+
+<div class="serieslistContent otherPage row small-up-2 medium-up-3 large-up-4 expanded">
+<h2>Sermon Series:</h2>
+        {% for item in site.data.series %}
+        <div class="serieslistItem column">
+            <div class="serieslistItem__thumbnail">
+            <a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">
+                {% if item.featured_image %}
+                {% for img in item.featured_image %}
+            <img src="{{img.url}}" alt="{{item.title}}">
+                {% endfor %}
+                {% else %}
+                <img src="{{site.url}}{{site.default_sermon_image}}" alt="Default Series Image">
+                {% endif %}
+            </a>
+            <h4><a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></h4>
+            </div><!--/serieslistitem__thumbnail-->
+            </div><!--/serieslistItem-->
+        {% endfor %}
+</div><!--/serieslistContent-->

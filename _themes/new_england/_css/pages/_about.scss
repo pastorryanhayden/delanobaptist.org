@@ -1,0 +1,74 @@
+.aboutContent {
+    @include grid-row;
+    min-height: 65vh;
+}
+.aboutContent__menu {
+    @include breakpoint(small only){
+    display: none;
+    }
+    @include breakpoint(medium){
+    @include grid-column(3);
+    border-right: 2px solid $medium-gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 63vh;
+    }
+    @include breakpoint(large){
+    @include grid-column(2);
+    }
+}
+.aboutContent__content {
+    @include breakpoint(small){
+    @include grid-column(12);
+    }
+    @include breakpoint(medium){
+    @include grid-column(9);
+    }
+    @include breakpoint(large){
+    @include grid-column(10);
+    }
+}
+
+.aboutContent__content__pageHeader {
+    @include grid-column(12);
+    margin-top: 30px;
+
+ h1 {
+    padding-top: 20px;
+}
+
+h1 span {
+    color: $primary-color;
+}
+}
+
+.aboutContent__content__content {
+    padding-top: 20px;
+    @include breakpoint(small){
+    @include grid-column(12);
+    }
+    @include breakpoint(medium){
+    @include grid-column(9);
+    }
+    @include breakpoint(large){
+    @include grid-column(8);
+    }
+}
+
+.aboutContent__content__sidebar {
+    @include breakpoint(small only){
+    @include grid-column(12);
+    border-top: 2px solid $medium-gray;
+    }
+    @include breakpoint(medium){
+    @include grid-column(3);
+    border-left: 2px solid $medium-gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    @include breakpoint(large){
+    @include grid-column(4);
+    }
+}
+
+

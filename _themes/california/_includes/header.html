@@ -1,0 +1,84 @@
+<div class="off-canvas-wrapper">
+<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<header>
+    <div class="infoBar">
+    <h1><a href="{{site.url}}">Cranesville <span>Bible Church</span></a></h1>
+    <div class="service-times">
+            <ul class="menu vertical">
+                <li>Sunday School<span> 10:00AM</span></li>
+                <li>Morning Worship<span>11:00AM</span></li>
+                <li>Evening Worship<span> 6:00PM</span></li>
+                <li>Wednesday Bible Study<span> 6:30PM</span></li>
+            </ul>
+    </div><!--/service-times-->
+    <div class="contact">
+            <p>
+                10029 Reed St, Cranesville, PA 16410 <br>
+                (814) 746-5287 • info@cranesvillebiblechurch.com <br>
+                <a href="https://www.facebook.com/CranesvilleBibleChurch/?fref=ts"><i class="fi-social-facebook"></i> CranesvilleBibleChurch</a>
+            </p>
+    </div><!--/contact-->
+
+    </div><!--/infoBar-->
+<div class="MainNavigation">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
+            <li><a href="#">ABOUT US</a>
+                <ul class="menu">
+                    {% for item in site.data.abouts %}
+                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </li><!--/End of About Us-->
+            <li><a href="#">MINISTRIES</a>
+                <ul class="menu">
+                    {% for item in site.data.ministries %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </li><!--/ministries-->
+            <li><a href="{{ "calendar-list.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
+            <li><a href="#">MEDIA</a>
+                <ul class="menu">
+                    <li><a href="{{ "sermons.html" | prepend: site.baseurl | prepend: site.url }}">Sermons</a></li>
+                    <li><a href="{{ "blog-list.html" | prepend: site.baseurl | prepend: site.url }}">Blog</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </li><!--/media-->
+            <li><a href="{{ "contact-us.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
+        </ul><!--.dropdown menu -->
+</div><!--/MainNavigation-->
+<div class="MobileNavigation">
+    <button type="button" data-toggle="offCanvas"> <i class="fi-list"></i></button>
+</div>
+</header>
+<div class="off-canvas position-right mobile-sidebar" id="offCanvas" data-off-canvas data-position="right">
+    <ul class="vertical menu" data-accordion-menu>
+    <li><a href="{{site.url }}">HOME</a></li>
+    <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
+    <li><a href="#">ABOUT US</a>
+        <ul class="menu">
+            {% for item in site.data.abouts %}
+            <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </li><!--/End of About Us-->
+    <li><a href="#">MINISTRIES</a>
+        <ul class="menu">
+                    {% for item in site.data.ministries %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endfor %}
+                </ul>
+    </li><!--/ministries-->
+    <li><a href="{{ "calendar-list.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
+    <li><a href="#">MEDIA</a>
+        <ul class="menu">
+            <li><a href="{{ "sermons.html" | prepend: site.baseurl | prepend: site.url }}">Sermons</a></li>
+            <li><a href="{{ "blog-list.html" | prepend: site.baseurl | prepend: site.url }}">Blog</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+    </li><!--/media-->
+    <li><a href="{{ "contact-us.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
+</ul><!--.dropdown menu --></div><!--slideout menu-->
+<div class="off-canvas-content" data-off-canvas-content>
+

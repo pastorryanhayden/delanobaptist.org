@@ -1,0 +1,43 @@
+{
+  "name": "SitesforChurch-master-template.",
+  "version": "1.0.0",
+  "description": "All the templates for Sitesfor.church intended for use by our site-reps",
+  "main": "index.js",
+  "scripts": {
+    "watch": "./_test.sh",
+    "build": "./_npm ibuild.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pastorryanhayden/cranesvillebiblechurch.com.git"
+  },
+  "author": "Ryan Hayden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SitesForChurch/sitesforchurch-jekyll/issues"
+  },
+  "homepage": "https://github.com/SitesForChurch/sitesforchurch-jekyll#readme",
+  "dependencies": {
+    "airtable": "^0.4.1",
+    "bower": "^1.7.9",
+    "browser-sync": "latest",
+    "browserify": "latest",
+    "expect.js": "latest",
+    "jscs": "latest",
+    "jshint": "latest",
+    "jsonfile": "^2.3.1",
+    "mocha": "latest",
+    "node-sass": "^3.8.0",
+    "request": "^2.72.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5",
+    "yargs": "^4.7.1"
+  },
+  "devDependencies": {
+    "airtable": "^0.4.1",
+    "bower": "^1.7.9",
+    "browser-sync": "^2.13.0",
+    "js-yaml": "^3.5.4",
+    "jsonfile": "^2.3.1"
+  }
+}

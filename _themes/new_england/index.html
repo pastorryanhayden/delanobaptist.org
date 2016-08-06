@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+ <div class="hero">
+            <div class="hero-content">
+                <h2>Exalting Christ and seeing Him change lives in Riverhead since 2010.</h2>
+                <div class="buttons">
+                <a href="{{site.url}}welcome.html" class="button">Plan A Visit</a>
+                <a href="{{site.url}}contact-us.html" class="button">Get In Touch</a>
+                </div><!--/buttons-->
+            </div><!--/hero-content-->
+        </div><!--/hero-->
+        <div class="home-sermons">
+            <h2>Latest Sermons</h2>
+            <div class="home-sermon-list">
+
+              {% comment %} Display the latest three sermons {% endcomment %}
+                {% for sermon in site.data.sermons limit: 3 %}
+                <div class="home-sermon-box">
+                    <div class="service-type"><p><i class="fa fa-microphone"></i> {{sermon.service}}</p></div><!--/service-type-->
+                    <div class="sermon-info">
+                        <div class="play-button">
+                            {% if  sermon.sermon_mp3 %}
+                                {% for mp3 in sermon.sermon_mp3 %}
+                            <a href="{{mp3.url}}" class="play"><i class="fa fa-play-circle"></i></a>
+                             {% endfor %}
+                            {% else %}
+                            <a href="#" class="play"><i class="fa fa-play-circle"></i></a>
+                            {% endif %}
+                        </div><!--/play-button-->
+                        <div class="sermon-info-info">
+                            <h3><a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}">{{sermon.title}}</a></h3>
+                            <p><i class="fa fa-user"></i>{{sermon.speaker_name}}  <i class="fa fa-calendar"></i> {{sermon.date | date: "%m/%d/%y" }}  <i class="fa fa-book"></i> {{sermon.bible_text}}</p>
+                        </div><!--/sermon-info-info-->
+                    </div><!--/sermon-info-->
+                    <p class="series-link"><a href="{{ sermon.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">More from this series <i class="fa fa-external-link"></i></a></p>
+                </div><!--/home-sermon-box-->
+                {% endfor %}
+               
+        </div><!--/home-sermon-list-->
+        </div><!--/home-sermons-->
+        <div class="main-content-wrapper">
+        <article class="main">
+        <div class="home-upcoming-events">
+        <h2>Upcoming Events</h2>
+         {% for event in site.data.events limit: 3 %}
+         <article class="event">
+        <div class="event-date">
+          <p class="event-month">{{event.DateTime | date: "%b"}}</p>
+          <p class="event-day">{{event.DateTime | date: "%d"}}</p>
+        </div>
+        <div class="event-desc">
+          <h4 class="event-desc-header">{{event.event_name}}</h4>
+          <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}" class="rsvp button">Details</a>
+        </div>
+
+      </article>
+      {% endfor %}
+
+     
+        </div><!--/upcoming-events-->
+        <div class="home-gallery">
+        <h2>Recent Photos</h2>
+        <div class="gallery-files">
+        {% for group in site.data.photos | limit: 1 %}
+            {% for img in group.gallery | limit: 4 %}          
+        <a class="gallery" href="{{img.url}}">
+                    <img src="{{img.thumbnails.large.url}}" width="150" height="150" />
+        </a><!--/gallery-item-->
+            {% endfor %} <!--/end individual images-->
+          {% endfor %} <!--/ end gallery loop -->  
+ 
+       
+</div><!--/gallery-files-->
+            <a href="#" class="button">See More</a>
+        </div><!--/gallery-->
+
+
+        <div class="home-blog">
+        <h2>Blog Posts</h2>
+            <div class="home_post_list">
+                {% for blog in site.data.blog limit: 2 %}
+                <div class="post_list_post">
+                    <div class="post_list_image">
+                        <a href="a href="{{ blog.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}">
+                            {% if blog.featured_image %}
+                            {% for img in blog.featured_image %}
+                            <img src="{{img.url}}" alt="{{blog.title}}">
+                            {% endfor %}
+                            {% else %}
+                                <img src="{{site.default_blog_image}}" alt="{{blog.title}} | Default Featured Image">
+                            {% endif %}
+                            <p><i class="fa fa-user"></i> {{blog.author_name}} <br> <i class="fa fa-list"></i> {{blog.categories}}</p>
+                        </a>
+                    </div><!--/post_list_image-->
+                    <div class="post_list_info">
+                        <h4><a href="a href="{{ blog.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}">{{blog.title}}</a></h4>
+
+                        <a href="a href="{{ blog.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}" class="button post_list_read_more">Read More</a>
+                    </div><!--/post_list_info-->
+                </div><!--/post_list_post-->
+                {% endfor %}
+
+            </div><!--/home_post_list-->
+        </div><!--/home-blog-->
+    </article><!--/main-->
+    </div><!--/main-content-wrapper-->
+    </div><!--/content-->

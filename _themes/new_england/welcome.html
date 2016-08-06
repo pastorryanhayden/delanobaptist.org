@@ -1,0 +1,122 @@
+---
+layout: default
+---
+<style>
+    .welcome {
+    background: url({{site.default_header_image}}) no-repeat top center;
+    background-size: contain;
+    padding-top: 100px;
+    min-height: 1200px;
+    }
+</style>
+
+<!-- This welcome page is a little bit more complicated than the one on California.  It too has a banded design, but it uses a single page menu.  
+
+Here is how it works -there are three elements to it:
+
+First, the welcome_Menu.
+    This is the menu for this page that sticks to the top of the screen as you scroll down.  It's pretty cool.  Instead of a URL in the <a href=""> part, put the symbol # and then the ID of the div section.  So if it is <div id="section-1"></div>  You would link to that with <a href="#section-1"></a>.
+Second, the div sections:
+    Each band or section of the page sits in a <div> tag.  This tag has to have two extra elements: an "ID" and a "data-magellan-target".  So the section-1 section would sit in a div that looks like this: <div class="section-1" id="section-1" data-magellan-target="section-1">
+ 
+
+
+-->
+
+<div class="welcome">
+    <div class="welcome__Header">
+    <h1>New to Community Baptist</h1>
+    </div><!--/welcome__Header-->
+    <div class="welcome__Wrapper" id="content">
+        <div class="sticky-wrapper" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content" data-options="marginTop:0;" style="width:100%;">
+        <ul class="welcome__Menu"  data-magellan data-options="activeClass:active; threshold:85; animationDuration:500; barOffset:50;">
+            <li><a href="#welcome">Welcome</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#expect">What to Expect</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#teens">Teens</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul><!--/welcome__Menu--> 
+        </div><!--/sticky-->
+        </div><!--/sticky-wrapper-->
+    <div class="welcome__Content">
+        <div id="welcome" class="welcome__Content__welcome" data-magellan-target="welcome">
+            <h2>Visiting Community Baptist</h2>
+            <p>Visiting any church, especially a larger one, for the very first time can be a tough experience. Well, we want to put you at ease. Your first visit to Lancaster Baptist will be refreshing, friendly, and enjoyable for your whole family. We want you to experience inspiring music, helpful teaching and preaching, friendly people, and a place where you feel welcome and "at home"! Here are a few answers to your questions and what you might expect on your first visit.</p>
+        </div>
+        <div id="services" class="welcome__Content__services" data-magellan-target="services">
+             <h2>Our Services</h2>
+            <h3>When are your services?</h3>
+            <p>Our main worship services are Sunday mornings at 8:30 am and 11:00 am. Both services are identical with the same Bible message and music program, so choose the one that best fits your schedule.</p>
+
+            <h4>Sunday</h4>
+                <ul>
+                <li>8:30 am &amp; 11:00 am Morning Worship Services</li>
+                <li>10:00 am Classes for All Ages</li>
+                <li>9:00 am &amp; 11:30 am Servicio en Español</li>
+                <li>11:00 am Deaf Service</li>
+                <li>1:00 pm Clases Bíblicas por Edades</li>
+                <li>5:00 pm Evening Service</li>
+                </ul>
+                <h4>Wednesday</h4>
+                <ul>
+                <li>7:00 pm Growth Point Services</li>
+                </ul>
+<p>Worship is the act of loving and responding to God! Through the heart-warming, conservative music and the clear, Bible teaching and preaching in our services, your heart will be inspired to love and to respond to God. Each week, families are strengthened, encouraged, and drawn closer to Him through these special times together. Each service is carefully planned and prayed over so that God may work in your life!</p>
+        </div>
+        <div id="location" class="welcome__Content__location" data-magellan-target="location">
+             <h2>Our Location</h2>
+             <h3>How do I get to CBC?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates saepe quia eaque iste dolorem praesentium, doloremque quam fugit delectus cumque expedita! Dolores consequatur, iste non eos corporis optio suscipit quasi?</p>
+            <div id="map">
+            
+        </div><!-- /map -->
+        <script>
+          function initMap() {
+            var mapDiv = document.getElementById('map');
+            var myLatLng = { lat: {{site.map_lat}}, lng: {{site.map_long}}  };
+            var churchPos = { lat: {{site.map_lat}}, lng: {{site.map_long}} };
+            var map = new google.maps.Map(mapDiv, {
+          center: myLatLng,
+          zoom: 15
+        });
+        var image = 'https://dl.dropboxusercontent.com/u/47159282/churchIcon.png';
+        var marker = new google.maps.Marker({
+            position: churchPos,
+            map: map,
+            title: '{{site.title}}',
+            icon: image
+        });
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+      }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+        </div>
+        <div id="expect" class="welcome__Content__expect" data-magellan-target="expect">
+             <h2>What To Expect</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates saepe quia eaque iste dolorem praesentium, doloremque quam fugit delectus cumque expedita! Dolores consequatur, iste non eos corporis optio suscipit quasi?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa necessitatibus, quos suscipit laborum perferendis expedita, eaque distinctio vitae beatae. Voluptates, eius vel alias illum consequatur. Aliquam, voluptate velit non ipsum.</p>
+        </div>
+        <div id="children" class="welcome__Content__children" data-magellan-target="children">
+             <h2>What About the Kids?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates saepe quia eaque iste dolorem praesentium, doloremque quam fugit delectus cumque expedita! Dolores consequatur, iste non eos corporis optio suscipit quasi?</p>
+        </div>
+        <div id="teens" class="welcome__Content__teens" data-magellan-target="teens">
+             <h2>Will my teens like it?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates saepe quia eaque iste dolorem praesentium, doloremque quam fugit delectus cumque expedita! Dolores consequatur, iste non eos corporis optio suscipit quasi?</p>
+        </div>
+        <div id="faq" class="welcome__Content__faq" data-magellan-target="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>How should I dress?</h3>
+            <p>There is not a dress code at Lancaster Baptist Church for members or guests. Our ministry leaders and many of our church family dress in more traditional “Sunday” dress; however, our main goal is that you would feel welcome and comfortable on your visit here at Lancaster Baptist!</p>
+            <h3>Am I expected to participate in the offering?</h3>
+            <p>No. We don't invite you to Lancaster Baptist Church for your offering. We want our service to be a gift to you. We hope you will find in this place a warm family spirit, truth from God's Word, and a place where you can grow in God's grace. Please don't feel any obligation to participate in the offering as a guest.</p>
+        </div>
+    </div><!--/welcome__Content-->
+    </div><!--/welcome__Wrapper-->
+</div><!--/welcome-->
