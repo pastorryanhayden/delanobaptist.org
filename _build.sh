@@ -1,7 +1,7 @@
 #!/bin/bash
 
 path="/Users/ryanhayden/github/cranesvillebiblechurch.com/";
-git_path="git@github.com:pastorryanhayden/cranesvillebiblechurch.com.git";
+git_path="git@github.com:pastorryanhayden/delanobaptist.org.git";
 need_build=false;
 #!/usr/bin/env bash
 
@@ -18,6 +18,8 @@ echo "Build Jekyll";
 jekyll build
 echo "Compile SASS";
 node-sass _css/app.scss _site/assets/css/app.css;
+glynn;
+
 # echo "Sync";
 # osascript upload.scpt;
 # echo -e '\n Complete all scripts';
