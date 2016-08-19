@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path="/Users/ryanhayden/github/cranesvillebiblechurch.com/";
+path="/Users/ryanhayden/github/delanobaptist.org/";
 git_path="git@github.com:pastorryanhayden/delanobaptist.org.git";
 need_build=false;
 #!/usr/bin/env bash
